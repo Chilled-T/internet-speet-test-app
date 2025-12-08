@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed Test</title>
+    <!-- Pre-load font for digital look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="content-wrapper">
+            
+            <!-- Top Stats Row -->
+            <div class="indicators-row">
+                <div id="ping-indicator" class="indicator">
+                    <div class="indicator-icon">⇄</div>
+                    <div class="indicator-label">Ping</div>
+                    <div id="ping-val" class="indicator-value">--</div>
+                </div>
+                <div id="dl-indicator" class="indicator">
+                    <div class="indicator-icon">↓</div>
+                    <div class="indicator-label">Download</div>
+                    <div id="dl-val" class="indicator-value">--</div>
+                </div>
+                <div id="ul-indicator" class="indicator">
+                    <div class="indicator-icon">↑</div>
+                    <div class="indicator-label">Upload</div>
+                    <div id="ul-val" class="indicator-value">--</div>
+                </div>
+            </div>
+
+            <!-- The Speed Gauge -->
+            <div class="gauge-wrapper">
+                <svg class="gauge-svg" viewBox="0 0 200 200">
+                    <!-- Definitions for Gradients -->
+                    <defs>
+                        <linearGradient id="gradientSpeed" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:var(--accent-cyan);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:var(--accent-blue);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Background Arc -->
+                    <!-- d path calculates a 270 degree arc -->
+                    <path class="gauge-track" d="M 40 160 A 85 85 0 1 1 160 160" />
+                    
+                    <!-- Filled Arc (animated via stroke-dasharray) -->
+                    <!-- Total length of this path is approx 400 units for calculation -->
+                    <path id="gauge-fill-path" class="gauge-fill" d="M 40 160 A 85 85 0 1 1 160 160" />
+                </svg>
+
+                <div class="gauge-center">
+                    <div id="main-speed" class="main-speed-value">0.0</div>
+                    <div class="main-speed-unit">Mbps</div>
+                </div>
+            </div>
+
+            <div id="status-text" class="status-display">READY</div>
+
+            <button id="start-btn" class="start-btn">
+                <span id="btn-text">GO</span>
+                <span id="loader" class="loader-ring"></span>
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy;2025 Developed by 
+            <a href="http://tumelotsie.online/">Tumelo Tsie</a>
+        </p>
+    </footer>
+
+    <script src="/main.js"></script>
+</body>
+</html>
