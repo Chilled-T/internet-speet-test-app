@@ -24,7 +24,7 @@ body {
             justify-content: center;
             overflow-x: hidden;
              /* Deep radial gradient to match the logo background */
-    background-image: url('/assets/animated-bg2.svg');
+    background-image: url('assets/animated-bg2.svg');
     background-size: cover;
     background-attachment: fixed;
     padding-bottom: 80px;
@@ -268,3 +268,4 @@ body {
 .footer a:hover {
   text-decoration: underline;
 }
+
